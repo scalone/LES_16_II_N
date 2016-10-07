@@ -98,7 +98,10 @@ namespace LES_16_II_N
 
         private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja realmente sair?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
