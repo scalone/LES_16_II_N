@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F51422A-590A-4925-B16F-E24C12248718}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LES_15_I_N</RootNamespace>
+    <AssemblyName>LES_15_I_N</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>C:\Program Files (x86)\FirebirdClient\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexao.cs" />
+    <Compile Include="frmBairro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBairro.Designer.cs">
+      <DependentUpon>frmBairro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCbo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCbo.Designer.cs">
+      <DependentUpon>frmCbo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepto.Designer.cs">
+      <DependentUpon>frmDepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEndereco.Designer.cs">
+      <DependentUpon>frmEndereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstado.Designer.cs">
+      <DependentUpon>frmEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFuncao.Designer.cs">
+      <DependentUpon>frmFuncao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFuncionario.Designer.cs">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorario.Designer.cs">
+      <DependentUpon>frmHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMunicipio.Designer.cs">
+      <DependentUpon>frmMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPais.Designer.cs">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoHorario.Designer.cs">
+      <DependentUpon>frmTipoHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBairro.resx">
+      <DependentUpon>frmBairro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCbo.resx">
+      <DependentUpon>frmCbo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDepto.resx">
+      <DependentUpon>frmDepto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEndereco.resx">
+      <DependentUpon>frmEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstado.resx">
+      <DependentUpon>frmEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncao.resx">
+      <DependentUpon>frmFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncionario.resx">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorario.resx">
+      <DependentUpon>frmHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMunicipio.resx">
+      <DependentUpon>frmMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPais.resx">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoHorario.resx">
+      <DependentUpon>frmTipoHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\10616131_341468336004321_4742195324447693067_n.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
