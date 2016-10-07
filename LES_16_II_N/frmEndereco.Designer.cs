@@ -1,4 +1,4 @@
-﻿namespace LES_15_II_N
+﻿namespace LES_16_II_N
 {
     partial class frmendereco
     {

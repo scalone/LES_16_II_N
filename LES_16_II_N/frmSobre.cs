@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LES_15_II_N
+namespace LES_16_II_N
 {
     public partial class frmsobre : Form
     {

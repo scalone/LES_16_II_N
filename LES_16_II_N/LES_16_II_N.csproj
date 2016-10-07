@@ -8,8 +8,8 @@
     <ProjectGuid>{4F51422A-590A-4925-B16F-E24C12248718}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LES_15_II_N</RootNamespace>
-    <AssemblyName>LES_15_II_N</AssemblyName>
+    <RootNamespace>LES_16_II_N</RootNamespace>
+    <AssemblyName>LES_16_II_N</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

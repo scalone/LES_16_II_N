@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LES_15_II_N.Properties {
+namespace LES_16_II_N.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

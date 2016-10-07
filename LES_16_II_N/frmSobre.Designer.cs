@@ -1,4 +1,4 @@
-﻿namespace LES_15_II_N
+﻿namespace LES_16_II_N
 {
     partial class frmsobre
     {
@@ -98,7 +98,7 @@
             // 
             // pctautor
             // 
-            this.pctautor.Image = global::LES_15_II_N.Properties.Resources.IMG_0452;
+            this.pctautor.Image = global::LES_16_II_N.Properties.Resources.IMG_0452;
             this.pctautor.Location = new System.Drawing.Point(196, 13);
             this.pctautor.Name = "pctautor";
             this.pctautor.Size = new System.Drawing.Size(184, 159);

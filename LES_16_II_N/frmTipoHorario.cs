@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using FirebirdSql.Data.FirebirdClient;
 
-namespace LES_15_II_N
+namespace LES_16_II_N
 {
     public partial class frmtipohorario : Form
     {
