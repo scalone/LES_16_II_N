@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LES_15_I_N
+namespace LES_15_II_N
 {
     public partial class frmsobre : Form
     {
@@ -19,6 +19,11 @@ namespace LES_15_I_N
         private void btvoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbnome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

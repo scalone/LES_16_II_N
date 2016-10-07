@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using FirebirdSql.Data.FirebirdClient;
 
-namespace LES_15_I_N
+namespace LES_15_II_N
 {
     class Conexao
     {
@@ -27,7 +27,7 @@ namespace LES_15_I_N
             if (bActive){
                 string _conn;
                 _conn = "User=SYSDBA;Password=masterkey;"
-                                 + @"Database=C:\Fatec\Ads\LES_16_I_N\Dados.fdb;"
+                                 + @"Database=C:\Fatec\Ads\LES_16_II_N\Dados.fdb;"
                                  + "DataSource=localhost;Port=3050;"
                                  + "Dialect=3;Charset=WIN1252;Role=;"
                                  + "Connection lifetime=0;"

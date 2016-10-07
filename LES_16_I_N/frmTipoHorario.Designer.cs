@@ -1,4 +1,4 @@
-﻿namespace LES_15_I_N
+﻿namespace LES_15_II_N
 {
     partial class frmtipohorario
     {

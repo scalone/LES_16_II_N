@@ -1,4 +1,4 @@
-﻿namespace LES_15_I_N
+﻿namespace LES_15_II_N
 {
     partial class frmsobre
     {
@@ -33,8 +33,8 @@
             this.lbcelular = new System.Windows.Forms.Label();
             this.lbcidadeuf = new System.Windows.Forms.Label();
             this.btvoltar = new System.Windows.Forms.Button();
-            this.pctautor = new System.Windows.Forms.PictureBox();
             this.txtfinalidade = new System.Windows.Forms.TextBox();
+            this.pctautor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctautor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,18 +43,19 @@
             this.lbnome.AutoSize = true;
             this.lbnome.Location = new System.Drawing.Point(12, 13);
             this.lbnome.Name = "lbnome";
-            this.lbnome.Size = new System.Drawing.Size(145, 13);
+            this.lbnome.Size = new System.Drawing.Size(164, 13);
             this.lbnome.TabIndex = 0;
-            this.lbnome.Text = "Nome: Danilo de Lima Matias";
+            this.lbnome.Text = "Nome: Thiago Scalone de Sousa";
+            this.lbnome.Click += new System.EventHandler(this.lbnome_Click);
             // 
             // lbemail
             // 
             this.lbemail.AutoSize = true;
             this.lbemail.Location = new System.Drawing.Point(12, 61);
             this.lbemail.Name = "lbemail";
-            this.lbemail.Size = new System.Drawing.Size(163, 13);
+            this.lbemail.Size = new System.Drawing.Size(153, 13);
             this.lbemail.TabIndex = 1;
-            this.lbemail.Text = "E-mail: danilo.maldito@gmail.com";
+            this.lbemail.Text = "E-mail: thiago@scalone.com.br";
             // 
             // lbcelular
             // 
@@ -63,7 +64,7 @@
             this.lbcelular.Name = "lbcelular";
             this.lbcelular.Size = new System.Drawing.Size(126, 13);
             this.lbcelular.TabIndex = 2;
-            this.lbcelular.Text = "Celular: (16) 9 8149-5890";
+            this.lbcelular.Text = "Celular: (16) 992 410 585";
             // 
             // lbcidadeuf
             // 
@@ -84,16 +85,6 @@
             this.btvoltar.UseVisualStyleBackColor = true;
             this.btvoltar.Click += new System.EventHandler(this.btvoltar_Click);
             // 
-            // pctautor
-            // 
-            this.pctautor.Image = global::LES_15_I_N.Properties.Resources._10616131_341468336004321_4742195324447693067_n;
-            this.pctautor.Location = new System.Drawing.Point(196, 13);
-            this.pctautor.Name = "pctautor";
-            this.pctautor.Size = new System.Drawing.Size(184, 159);
-            this.pctautor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctautor.TabIndex = 5;
-            this.pctautor.TabStop = false;
-            // 
             // txtfinalidade
             // 
             this.txtfinalidade.Enabled = false;
@@ -103,7 +94,17 @@
             this.txtfinalidade.Size = new System.Drawing.Size(365, 125);
             this.txtfinalidade.TabIndex = 6;
             this.txtfinalidade.Text = "Esse sistema controla Login, Funcionários, Produtos, Pedidos e as Vendas de uma e" +
-                "mpresa.";
+    "mpresa.";
+            // 
+            // pctautor
+            // 
+            this.pctautor.Image = global::LES_15_II_N.Properties.Resources.IMG_0452;
+            this.pctautor.Location = new System.Drawing.Point(196, 13);
+            this.pctautor.Name = "pctautor";
+            this.pctautor.Size = new System.Drawing.Size(184, 159);
+            this.pctautor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctautor.TabIndex = 5;
+            this.pctautor.TabStop = false;
             // 
             // frmsobre
             // 

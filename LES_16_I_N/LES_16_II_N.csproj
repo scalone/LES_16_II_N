@@ -8,8 +8,8 @@
     <ProjectGuid>{4F51422A-590A-4925-B16F-E24C12248718}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LES_15_I_N</RootNamespace>
-    <AssemblyName>LES_15_I_N</AssemblyName>
+    <RootNamespace>LES_15_II_N</RootNamespace>
+    <AssemblyName>LES_15_II_N</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -189,9 +189,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\10616131_341468336004321_4742195324447693067_n.jpg" />
+    <Content Include="Resources\IMG_0452.jpg" />
+    <None Include="Resources\IMG_04521.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
