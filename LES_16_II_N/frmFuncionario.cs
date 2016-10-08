@@ -31,6 +31,7 @@ namespace LES_16_II_N
             cbendende.SelectedIndex = 0;
             cbfucnome.SelectedIndex = 0;
             cbdeptonome.SelectedIndex = 0;
+            cbestadonome.SelectedIndex = 0;
             txtfuncodi.Focus();
         }
 
@@ -109,6 +110,28 @@ namespace LES_16_II_N
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            strConsulta = "SELECT * FROM ESTADO";
+            cbestadonome.Items.Clear();
+
+            try
+            {
+                FbCommand cmd = new FbCommand(strConsulta, Conexao.FbCnn);
+                FbDataReader dr = cmd.ExecuteReader();
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+
+                while (dr.Read())
+                {
+                    dict.Add(dr["ESTNOME"].ToString(), Convert.ToInt32(dr["ESTCODI"]));
+                }
+                this.cbestadonome.DataSource = new BindingSource(dict, null);
+                this.cbestadonome.DisplayMember = "key";
+                this.cbestadonome.ValueMember = "value";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             Conexao.Active(false);
         }
 
@@ -116,8 +139,12 @@ namespace LES_16_II_N
         {
             if (txtfuncodi.Text != "")
             {
+                //string codi = txtfuncodi.Text;
+                //limpar();
+                //txtfuncodi.Text = codi;
+                
                 string strConsulta = 
-                    "SELECT FUNNOME, FUNSALA, FUNDTNA, FUNCPF, FUNRG, FUNFONE, FUNCELU, FUNCEL1, ENDCEP, FUCCODI, DEPCODI FROM FUNCIONARIO WHERE FUNCODI = '" 
+                    "SELECT FUNNOME, FUNSALA, FUNDTNA, FUNCPF, FUNRG, FUNFONE, FUNCELU, FUNCEL1, ENDCEP, FUCCODI, DEPCODI, ESTCODI FROM FUNCIONARIO WHERE FUNCODI = '" 
                     + txtfuncodi.Text + "'";
                 Conexao.Active(true);
 
@@ -142,46 +169,78 @@ namespace LES_16_II_N
                         txtfunnome.Focus();
                         int i = 0;
 
+                        for (i = 0; i < cbestadonome.Items.Count; i++)
+                        {
+                            this.cbestadonome.SelectedIndex = i;
+                            if (this.cbestadonome.SelectedValue.ToString() == dr["ESTCODI"].ToString())
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                if (i + 1 >= cbestadonome.Items.Count)
+                                {
+                                    MessageBox.Show("Estado não encontrada!");
+                                    this.cbestadonome.SelectedIndex = 0;
+                                    cbestadonome.Focus();
+                                }
+                            }
+                        }
+
+                        for (i = 0; i < cbdeptonome.Items.Count; i++)
+                        {
+                            this.cbdeptonome.SelectedIndex = i;
+
+                            if (this.cbdeptonome.SelectedValue.ToString() == dr["DEPCODI"].ToString())
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                if (i + 1 >= cbdeptonome.Items.Count)
+                                {
+                                    MessageBox.Show("Departamento não encontrada! - " + this.cbdeptonome.SelectedValue.ToString());
+                                    this.cbdeptonome.SelectedIndex = 0;
+                                    cbdeptonome.Focus();
+                                }
+                            }
+                        }
+
+                        for (i = 0; i < cbfucnome.Items.Count; i++)
+                        {
+                            this.cbfucnome.SelectedIndex = i;
+                            if (this.cbfucnome.SelectedValue.ToString() == dr["FUCCODI"].ToString())
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                if (i + 1 >= cbfucnome.Items.Count)
+                                {
+                                    MessageBox.Show("Função não encontrada!");
+                                    this.cbfucnome.SelectedIndex = 0;
+                                    cbfucnome.Focus();
+                                }
+                            }
+                        }
+
                         for (i = 0; i < cbendende.Items.Count; i++)
                         {
                             this.cbendende.SelectedIndex = i;
-
                             if (this.cbendende.SelectedValue.ToString() == dr["ENDCEP"].ToString())
                             {
-                                int j = 0;
-
-                                for (j = 0; j < cbfucnome.Items.Count; j++)
+                                break;
+                            }
+                            else
+                            {
+                                if (i + 1 >= cbendende.Items.Count)
                                 {
-                                    this.cbfucnome.SelectedIndex = j;
-
-                                    if (this.cbfucnome.SelectedValue.ToString() == dr["FUCCODI"].ToString())
-                                    {
-                                        int l = 0;
-
-                                        for (l = 0; l < cbdeptonome.Items.Count; l++)
-                                        {
-                                            this.cbdeptonome.SelectedIndex = l;
-
-                                            if (this.cbdeptonome.SelectedValue.ToString() == dr["DEPCODI"].ToString())
-                                            {
-                                                return;
-                                            }
-                                        }
-                                        MessageBox.Show("Departamento não encontrado!");
-                                        this.cbdeptonome.SelectedIndex = 0;
-                                        txtfuncodi.Focus();
-                                        return;
-                                    }
+                                    MessageBox.Show("Endereço não encontrado!");
+                                    this.cbendende.SelectedIndex = 0;
+                                    cbendende.Focus();
                                 }
-                                MessageBox.Show("Função não encontrada!");
-                                this.cbfucnome.SelectedIndex = 0;
-                                txtfuncodi.Focus();
-                                return;
                             }
                         }
-                        MessageBox.Show("Endereço não encontrado!");
-                        this.cbendende.SelectedIndex = 0;
-                        txtfuncodi.Focus();
                     }
                     else
                     {
@@ -199,6 +258,7 @@ namespace LES_16_II_N
                             cbfucnome.SelectedIndex = 0;
                             cbendende.SelectedIndex = 0;
                             cbdeptonome.SelectedIndex = 0;
+                            cbestadonome.SelectedIndex = 0;
                             txtfunnome.Focus();
                         }
                     }
@@ -245,8 +305,8 @@ namespace LES_16_II_N
                 string strAtualiza = "UPDATE FUNCIONARIO SET FUNNOME = '" + txtfunnome.Text +
                     "', FUNSALA = '" + txtfunsala.Text + "', FUNDTNA = '" + txtfundtna.Text + "', FUNCPF = '" + txtfuncpf.Text +
                     "', FUNRG = '" + txtfunrg.Text + "', FUNFONE = '" + txtfunfone.Text +"', FUNCELU = '" + txtfuncelu.Text +
-                    "', FUNCEL1 = '" + txtfuncel1.Text + "', ENDCEP = '" + cbendende.SelectedValue.ToString() + "', FUCCODI = '" + cbfucnome.SelectedValue.ToString() +
-                    "', DEPCODI = '" + cbdeptonome.SelectedValue.ToString() + "'";
+                    "', FUNCEL1 = '" + txtfuncel1.Text + "', ENDCEP = '" + cbendende.SelectedValue.ToString() +
+                    "', DEPCODI = '" + cbdeptonome.SelectedValue.ToString() + "'" + " WHERE FUNCODI = '" + cbfucnome.SelectedValue.ToString() + "'";
                 Conexao.Active(true);
 
                 try
@@ -297,6 +357,14 @@ namespace LES_16_II_N
         private void btvoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtfuncodi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.txtfuncodi_Leave(sender, e);
+            }
         }
     }
 }

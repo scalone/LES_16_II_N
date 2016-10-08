@@ -56,6 +56,8 @@
             this.lbfuncelu = new System.Windows.Forms.Label();
             this.txtfuncel1 = new System.Windows.Forms.TextBox();
             this.lbfuncel1 = new System.Windows.Forms.Label();
+            this.cbestadonome = new System.Windows.Forms.ComboBox();
+            this.lbestadonome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtfuncodi
@@ -64,6 +66,7 @@
             this.txtfuncodi.Name = "txtfuncodi";
             this.txtfuncodi.Size = new System.Drawing.Size(103, 20);
             this.txtfuncodi.TabIndex = 35;
+            this.txtfuncodi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfuncodi_KeyPress);
             this.txtfuncodi.Leave += new System.EventHandler(this.txtfuncodi_Leave);
             // 
             // lbfuncodi
@@ -305,11 +308,32 @@
             this.lbfuncel1.TabIndex = 70;
             this.lbfuncel1.Text = "OUTROS: ";
             // 
+            // cbestadonome
+            // 
+            this.cbestadonome.FormattingEnabled = true;
+            this.cbestadonome.Location = new System.Drawing.Point(80, 242);
+            this.cbestadonome.Name = "comboBox1";
+            this.cbestadonome.Size = new System.Drawing.Size(290, 21);
+            this.cbestadonome.TabIndex = 72;
+            // 
+            // lbestadonome
+            // 
+            this.lbestadonome.AutoSize = true;
+            this.lbestadonome.Location = new System.Drawing.Point(12, 245);
+            this.lbestadonome.Name = "label1";
+            this.lbestadonome.Size = new System.Drawing.Size(54, 13);
+            this.lbestadonome.TabIndex = 73;
+            this.lbestadonome.Text = "ESTADO:";
+            // 
             // frmfuncionario
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(394, 372);
+            this.Controls.Add(this.lbestadonome);
+            this.Controls.Add(this.cbestadonome);
             this.Controls.Add(this.txtfuncel1);
             this.Controls.Add(this.lbfuncel1);
             this.Controls.Add(this.txtfuncelu);
@@ -380,5 +404,7 @@
         private System.Windows.Forms.Label lbfuncelu;
         private System.Windows.Forms.TextBox txtfuncel1;
         private System.Windows.Forms.Label lbfuncel1;
+        private System.Windows.Forms.ComboBox cbestadonome;
+        private System.Windows.Forms.Label lbestadonome;
     }
 }
