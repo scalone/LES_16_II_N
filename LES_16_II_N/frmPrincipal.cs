@@ -103,5 +103,11 @@ namespace LES_16_II_N
                 this.Close();
             }
         }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUnidade f = new frmUnidade();
+            f.ShowDialog();
+        }
     }
 }
