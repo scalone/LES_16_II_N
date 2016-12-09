@@ -9,21 +9,11 @@ using System.Windows.Forms;
 
 namespace LES_16_II_N
 {
-    public partial class frmsobre : Form
+    public partial class frmUsuario : Form
     {
-        public frmsobre()
+        public frmUsuario()
         {
             InitializeComponent();
-        }
-
-        private void btvoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void lbnome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

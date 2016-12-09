@@ -10,21 +10,22 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace LES_16_II_N
 {
-    public partial class frmtipohorario : Form
+    public partial class frmramo : Form
     {
-        public frmtipohorario()
+        public frmramo()
         {
             InitializeComponent();
         }
 
         private void limpar()
         {
-            txtthocodi.Clear();
-            txtthonome.Clear();
-            txtthocodi.Focus();
+            txtramcodi.Clear();
+            txtramnome.Clear();
+            txtramobse.Clear();
+            txtramcodi.Focus();
         }
 
-        private void frmdepto_KeyDown(object sender, KeyEventArgs e)
+        private void frmramo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -32,11 +33,11 @@ namespace LES_16_II_N
             }
         }
 
-        private void txtthocodi_Leave(object sender, EventArgs e)
+        private void txtramcodi_Leave(object sender, EventArgs e)
         {
-            if (txtthocodi.Text != "")
+            if (txtramcodi.Text != "")
             {
-                string strConsulta = "SELECT THONOME FROM TIPO_HORARIO WHERE THOCODI = '" + txtthocodi.Text + "'";
+                string strConsulta = "SELECT * FROM RAMO WHERE RAMCODI = '" + txtramcodi.Text + "'";
 
                 Conexao.Active(true);
 
@@ -50,12 +51,13 @@ namespace LES_16_II_N
                         btincluir.Enabled = false;
                         btgravar.Enabled = true;
                         btexcluir.Enabled = true;
-                        txtthonome.Text = dr["THONOME"].ToString();
-                        txtthonome.Focus();
+                        txtramnome.Text = dr["RAMNOME"].ToString();
+                        txtramobse.Text = dr["RAMOBSE"].ToString();
+                        txtramnome.Focus();
                     }
                     else
                     {
-                        if ((MessageBox.Show("Tipo de Horário não encontrado \n deseja cadastra-lo?", "Cadastro",
+                        if ((MessageBox.Show("Ramo não encontrado \n deseja cadastra-lo?", "Cadastro",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No))
                         {
                             limpar();
@@ -65,14 +67,15 @@ namespace LES_16_II_N
                             btincluir.Enabled = true;
                             btgravar.Enabled = false;
                             btexcluir.Enabled = false;
-                            txtthonome.Text = "";
-                            txtthonome.Focus();
+                            txtramnome.Text = "";
+                            txtramobse.Text = "";
+                            txtramnome.Focus();
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.Message);
                 }
                 Conexao.Active(false);
             }
@@ -80,23 +83,22 @@ namespace LES_16_II_N
 
         private void btincluir_Click(object sender, EventArgs e)
         {
-            if (txtthonome.Text != "")
+            if (txtramnome.Text != "")
             {
-                string strInclui = "INSERT INTO TIPO_HORARIO VALUES('"+ txtthocodi.Text +"', '" + txtthonome.Text + "')";
-
+                string strIncluir = "INSERT INTO RAMO VALUES('" + txtramcodi.Text + "', '" + txtramnome.Text + "', '" + txtramobse.Text + "' )";
                 Conexao.Active(true);
 
                 try
                 {
-                    FbCommand cmd = new FbCommand(strInclui, Conexao.FbCnn);
+                    FbCommand cmd = new FbCommand(strIncluir, Conexao.FbCnn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Cadastro realizado com sucesso!");
                     limpar();
-                    txtthocodi.Focus();
+                    txtramcodi.Focus();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.Message);
                 }
                 Conexao.Active(false);
             }
@@ -104,11 +106,9 @@ namespace LES_16_II_N
 
         private void btgravar_Click(object sender, EventArgs e)
         {
-            if (txtthonome.Text != "")
+            if (txtramnome.Text != "")
             {
-                string strAtualiza = 
-                    "UPDATE TIPO_HORARIO SET THONOME = '" + txtthonome.Text + "' WHERE THOCODI = '" + txtthocodi.Text + "'";
-
+                string strAtualiza = "UPDATE RAMO SET RAMNOME = '" + txtramnome.Text + "', RAMOBSE = '" + txtramobse.Text + "' WHERE RAMCODI = " + txtramcodi.Text + "";
                 Conexao.Active(true);
 
                 try
@@ -117,11 +117,11 @@ namespace LES_16_II_N
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Registro atualizado com sucesso!");
                     limpar();
-                    txtthocodi.Focus();
+                    txtramcodi.Focus();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.Message);
                 }
                 Conexao.Active(false);
             }
@@ -129,26 +129,24 @@ namespace LES_16_II_N
 
         private void btexcluir_Click(object sender, EventArgs e)
         {
-            if (txtthonome.Text != "")
+            if (txtramcodi.Text != "")
             {
-                string strExclui = "DELETE FROM TIPO_HORARIO WHERE THOCODI = '" + txtthocodi.Text + "'";
-
+                string strDelete = "DELETE FROM RAMO WHERE RAMCODI = '" + txtramcodi.Text + "' ";
                 Conexao.Active(true);
 
                 try
                 {
-                    FbCommand cmd = new FbCommand(strExclui, Conexao.FbCnn);
+                    FbCommand cmd = new FbCommand(strDelete, Conexao.FbCnn);
                     cmd.ExecuteNonQuery();
+                    limpar();
+                    txtramcodi.Focus();
                     btexcluir.Enabled = false;
-                    btincluir.Enabled = true;
                     btgravar.Enabled = false;
                     MessageBox.Show("Registro excluído com sucesso!");
-                    limpar();
-                    txtthocodi.Focus();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.Message);
                 }
                 Conexao.Active(false);
             }
