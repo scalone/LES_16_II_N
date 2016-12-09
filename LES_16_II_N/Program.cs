@@ -15,7 +15,8 @@ namespace LES_16_II_N
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmprincipal());
+           // Application.Run(new frmprincipal());
+            Application.Run(new frmLogin());
         }
     }
 }

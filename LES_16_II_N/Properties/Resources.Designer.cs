@@ -63,6 +63,16 @@ namespace LES_16_II_N.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Administracao {
+            get {
+                object obj = ResourceManager.GetObject("Administracao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_0452 {
             get {
                 object obj = ResourceManager.GetObject("IMG_0452", resourceCulture);

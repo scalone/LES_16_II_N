@@ -110,6 +110,12 @@
     <Compile Include="frmHorario.Designer.cs">
       <DependentUpon>frmHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     <EmbeddedResource Include="frmHorario.resx">
       <DependentUpon>frmHorario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMunicipio.resx">
       <DependentUpon>frmMunicipio.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +262,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Administracao.png" />
     <Content Include="Resources\IMG_0452.jpg" />
     <None Include="Resources\IMG_04521.jpg" />
   </ItemGroup>
