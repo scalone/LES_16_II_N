@@ -36,7 +36,7 @@ namespace LES_16_II_N
         {
             if (txtgrucodi.Text != "")
             {
-                string strConsulta = "SELECT GRUNOME FROM GRUPO WHERE GRUCODI = '" + txtgrucodi.Text + "'";
+                string strConsulta = "SELECT GRUNOME FROM GRUPO WHERE GRUPOCODI = '" + txtgrucodi.Text + "'";
 
                 Conexao.Active(true);
 
@@ -105,7 +105,7 @@ namespace LES_16_II_N
         {
             if (txtgrunome.Text != "")
             {
-                string strAtualiza = "UPDATE GRUPO SET GRUNOME = '" + txtgrunome.Text + "' WHERE GRUCODI = " + txtgrucodi.Text + "";
+                string strAtualiza = "UPDATE GRUPO SET GRUNOME = '" + txtgrunome.Text + "' WHERE GRUPOCODI = " + txtgrucodi.Text + "";
                 Conexao.Active(true);
 
                 try
@@ -128,7 +128,7 @@ namespace LES_16_II_N
         {
             if (txtgrucodi.Text != "")
             {
-                string strDelete = "DELETE FROM GRUPO WHERE GRUCODI = '" + txtgrucodi.Text + "' ";
+                string strDelete = "DELETE FROM GRUPO WHERE GRUPOCODI = '" + txtgrucodi.Text + "' ";
                 Conexao.Active(true);
 
                 try

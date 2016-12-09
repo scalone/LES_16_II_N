@@ -70,7 +70,7 @@ namespace LES_16_II_N
                         {
                             this.cbgrunome.SelectedIndex = i;
 
-                            if (this.cbgrunome.SelectedValue.ToString() == dr["GRUCODI"].ToString())
+                            if (this.cbgrunome.SelectedValue.ToString() == dr["GRUPOCODI"].ToString())
                             {
                                 int j = 0;
 
@@ -170,7 +170,7 @@ namespace LES_16_II_N
 
                 while (dr.Read())
                 {
-                    dict.Add(dr["GRUNOME"].ToString(), Convert.ToInt32(dr["GRUCODI"]));
+                    dict.Add(dr["GRUNOME"].ToString(), Convert.ToInt32(dr["GRUPOCODI"]));
                 }
                 this.cbgrunome.DataSource = new BindingSource(dict, null);
                 this.cbgrunome.DisplayMember = "key";
@@ -247,7 +247,7 @@ namespace LES_16_II_N
                 string strAtualiza = "UPDATE PRODUTO SET PRONOME = '" + txtpronome.Text +
                     "', PROCUST = '" + txtprocust.Text + "', PROMARG = '" + txtpromarg.Text + "', PROVEND = '" + txtprovend.Text +
                     "', PROESTO = '" + txtproesto.Text + "', PROLOCA = '" + txtproloca.Text + "', PROOBS = '" + txtproobs.Text +
-                    "', GRUCODI = '" + cbgrunome.SelectedValue.ToString() + "', UNICODI = '" + cbuninome.SelectedValue.ToString() +
+                    "', GRUPOCODI = '" + cbgrunome.SelectedValue.ToString() + "', UNICODI = '" + cbuninome.SelectedValue.ToString() +
                     "' WHERE PROCODI = '" + txtprocodi.Text + "'";
                 Conexao.Active(true);
 

@@ -109,5 +109,35 @@ namespace LES_16_II_N
             frmUnidade f = new frmUnidade();
             f.ShowDialog();
         }
+
+        private void unidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmproduto f = new frmproduto();
+            f.ShowDialog();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmcliente f = new frmcliente();
+            f.ShowDialog();
+        }
+
+        private void ramosDeAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmramo f = new frmramo();
+            f.ShowDialog();
+        }
+
+        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmgrupo f = new frmgrupo();
+            f.ShowDialog();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario f = new frmUsuario();
+            f.ShowDialog();
+        }
     }
 }

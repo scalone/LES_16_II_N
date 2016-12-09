@@ -37,7 +37,7 @@ namespace LES_16_II_N
         {
             if (txtramcodi.Text != "")
             {
-                string strConsulta = "SELECT * FROM RAMO WHERE RAMCODI = '" + txtramcodi.Text + "'";
+                string strConsulta = "SELECT * FROM RAMO WHERE RAMOCODI = '" + txtramcodi.Text + "'";
 
                 Conexao.Active(true);
 
@@ -108,7 +108,7 @@ namespace LES_16_II_N
         {
             if (txtramnome.Text != "")
             {
-                string strAtualiza = "UPDATE RAMO SET RAMNOME = '" + txtramnome.Text + "', RAMOBSE = '" + txtramobse.Text + "' WHERE RAMCODI = " + txtramcodi.Text + "";
+                string strAtualiza = "UPDATE RAMO SET RAMNOME = '" + txtramnome.Text + "', RAMOBSE = '" + txtramobse.Text + "' WHERE RAMOCODI = " + txtramcodi.Text + "";
                 Conexao.Active(true);
 
                 try
@@ -131,7 +131,7 @@ namespace LES_16_II_N
         {
             if (txtramcodi.Text != "")
             {
-                string strDelete = "DELETE FROM RAMO WHERE RAMCODI = '" + txtramcodi.Text + "' ";
+                string strDelete = "DELETE FROM RAMO WHERE RAMOCODI = '" + txtramcodi.Text + "' ";
                 Conexao.Active(true);
 
                 try

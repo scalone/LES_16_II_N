@@ -62,6 +62,8 @@
             this.btincluir = new System.Windows.Forms.Button();
             this.txtclistat = new System.Windows.Forms.TextBox();
             this.lbclistat = new System.Windows.Forms.Label();
+            this.lbendereco = new System.Windows.Forms.Label();
+            this.cbendereco = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtclinome
@@ -292,6 +294,7 @@
             this.cbramnome.Name = "cbramnome";
             this.cbramnome.Size = new System.Drawing.Size(294, 21);
             this.cbramnome.TabIndex = 53;
+            this.cbramnome.SelectedIndexChanged += new System.EventHandler(this.cbramnome_SelectedIndexChanged);
             // 
             // lbramnome
             // 
@@ -362,11 +365,31 @@
             this.lbclistat.TabIndex = 55;
             this.lbclistat.Text = "STATS: ";
             // 
+            // lbendereco
+            // 
+            this.lbendereco.AutoSize = true;
+            this.lbendereco.Location = new System.Drawing.Point(6, 307);
+            this.lbendereco.Name = "lbendereco";
+            this.lbendereco.Size = new System.Drawing.Size(70, 13);
+            this.lbendereco.TabIndex = 56;
+            this.lbendereco.Text = "ENDEREÇO:";
+            this.lbendereco.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cbendereco
+            // 
+            this.cbendereco.FormattingEnabled = true;
+            this.cbendereco.Location = new System.Drawing.Point(76, 305);
+            this.cbendereco.Name = "cbendereco";
+            this.cbendereco.Size = new System.Drawing.Size(294, 21);
+            this.cbendereco.TabIndex = 57;
+            // 
             // frmcliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 372);
+            this.Controls.Add(this.cbendereco);
+            this.Controls.Add(this.lbendereco);
             this.Controls.Add(this.txtclistat);
             this.Controls.Add(this.lbclistat);
             this.Controls.Add(this.cbramnome);
@@ -447,5 +470,7 @@
         private System.Windows.Forms.Button btincluir;
         private System.Windows.Forms.TextBox txtclistat;
         private System.Windows.Forms.Label lbclistat;
+        private System.Windows.Forms.Label lbendereco;
+        private System.Windows.Forms.ComboBox cbendereco;
     }
 }

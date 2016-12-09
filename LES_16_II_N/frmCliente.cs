@@ -84,7 +84,7 @@ namespace LES_16_II_N
                         {
                             this.cbramnome.SelectedIndex = i;
 
-                            if (this.cbramnome.SelectedValue.ToString() == dr["RAMCODI"].ToString())
+                            if (this.cbramnome.SelectedValue.ToString() == dr["RAMOCODI"].ToString())
                             {
                                 return;
                             }
@@ -142,7 +142,8 @@ namespace LES_16_II_N
                     "', '" + txtclidtin.Text + "', '" + txtclicnpj.Text + "', '" + txtcliines.Text +
                     "', '" + txtcliemai.Text + "', '" + txtclifone.Text + "', '" + txtclicelu.Text +
                     "', '" + txtclicel1.Text + "', '" + txtclinume.Text + "', '" + txtclistat.Text +
-                    "', '" + cbramnome.SelectedValue.ToString() + " ')";
+                    "', " + cbramnome.SelectedValue.ToString() + ", '" + cbendereco.SelectedValue.ToString() + "' );";
+                MessageBox.Show(strIncluir);
                 Conexao.Active(true);
 
                 try
@@ -177,7 +178,7 @@ namespace LES_16_II_N
 
                 while (dr.Read())
                 {
-                    dict.Add(dr["RAMNOME"].ToString(), Convert.ToInt32(dr["RAMCODI"]));
+                    dict.Add(dr["RAMNOME"].ToString(), Convert.ToInt32(dr["RAMOCODI"]));
                 }
                 this.cbramnome.DataSource = new BindingSource(dict, null);
                 this.cbramnome.DisplayMember = "key";
@@ -187,6 +188,30 @@ namespace LES_16_II_N
             {
                 MessageBox.Show(ex.Message);
             }
+
+            strConsulta = "SELECT * FROM ENDERECO";
+            cbendereco.Items.Clear();
+
+            try
+            {
+                FbCommand cmd = new FbCommand(strConsulta, Conexao.FbCnn);
+                FbDataReader dr = cmd.ExecuteReader();
+
+                Dictionary<string, string> dict = new Dictionary<string, string>();
+
+                while (dr.Read())
+                {
+                    dict.Add(dr["ENDENDE"].ToString(), dr["ENDCEP"].ToString());
+                }
+                this.cbendereco.DataSource = new BindingSource(dict, null);
+                this.cbendereco.DisplayMember = "key";
+                this.cbendereco.ValueMember = "value";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             Conexao.Active(false);
         }
 
@@ -230,7 +255,8 @@ namespace LES_16_II_N
                     "', CLIDTIN = '" + txtclidtin.Text + "', CLICNPJ = '" + txtclicnpj.Text + "', CLIINES = '" + txtcliines.Text +
                     "', CLIEMAI = '" + txtcliemai.Text + "', CLIFONE = '" + txtclifone.Text + "', CLICELU = '" + txtclicelu.Text +
                     "', CLICEL1 = '" + txtclicel1.Text + "', CLINUME = '" + txtclinume.Text + "', CLISTAT = '" + txtclistat.Text +
-                    "', RAMCODI = '" + cbramnome.SelectedValue.ToString() + "' WHERE CLICODI = '" + txtclicodi.Text + "'";
+                    "', RAMOCODI = '" + cbramnome.SelectedValue.ToString() + "', ENDCEP = '" + cbendereco.SelectedValue.ToString() +
+                    "' WHERE CLICODI = '" + txtclicodi.Text + "'";
                 Conexao.Active(true);
 
                 try
@@ -250,6 +276,16 @@ namespace LES_16_II_N
                 }
                 Conexao.Active(false);
             }
+        }
+
+        private void cbramnome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
